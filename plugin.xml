@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="cordova-plugin-toast" version="1.0.0" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Toast</name>
+    <description>android toast plugin for cordova</description>
+    <js-module name="Toast" src="www/toast.js">
+        <clobbers target="Toast"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Toast">
+                <param name="android-package" value="org.apache.cordova.toast.ToastPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/ToastPlugin.java" target-dir="src/org/apache/cordova/toast"/>
+    </platform>
+</plugin>
